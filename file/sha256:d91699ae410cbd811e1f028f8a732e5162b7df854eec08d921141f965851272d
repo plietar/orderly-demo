@@ -1,0 +1,6 @@
+orderly2::orderly_dependency("incoming_data", "latest()",
+                             c("incoming.rds" = "data.rds"))
+d <- readRDS("incoming.rds")
+png("analysis.png")
+plot(y ~ x, d)
+dev.off()
